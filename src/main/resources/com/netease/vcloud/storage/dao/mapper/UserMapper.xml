@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.netease.vcloud.storage.dao.mapper.UserMapper">
+
+	<select id="selectUserByID" parameterType="String" resultType="User">
+	    <![CDATA[
+	    	select * from vcloud_user where id = #{uid}
+		]]>
+	</select>
+
+	<select id="selectUserByEmail" parameterType="String"
+		resultType="User">
+	    <![CDATA[
+	    	select * from vcloud_user where email = #{email}
+		]]>
+	</select>
+
+	<insert id="addUser" parameterType="User">
+		<![CDATA[
+			insert into vcloud_user(uid, password, nce_password, email, name, phone, ctime, stats)
+			values(#{uid}, #{password}, #{nce_password}, #{email}, #{name}, #{phone}, #{createtime}, 0); 
+		]]>
+	</insert>
+
+	<update id="activeUser">
+		<![CDATA[
+	    	update vcloud_user set stats=1, accessKey=#{1}, secretKey=#{2} where uid=#{0}
+		]]>
+	</update>
+	
+	<update id="upPwd">
+		<![CDATA[
+	    	update vcloud_user set password=#{1} where uid=#{0}
+		]]>
+	</update>
+
+</mapper>

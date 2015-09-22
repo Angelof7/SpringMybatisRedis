@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.netease.vcloud.storage.dao.domain.Channel">
+
+	<insert id="createChannel" parameterType="Channel">
+	    <![CDATA[
+			insert into vcloud_channel ( id, name, pid ) values ( #{id}, #{name}, #{pid} );
+		]]>
+	</insert>
+	
+</mapper>

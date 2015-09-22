@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<comment>server configuration</comment>
+<entry key="CacheEnabled">true</entry>
+<entry key="UseTimeline">false</entry>
+<entry key="MemcachedServerList">192.168.164.201:12345</entry>
+<entry key="MonitorIP">10.120.104.161</entry>
+<entry key="MonitorPort">5222</entry>
+</properties>
